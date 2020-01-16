@@ -4,5 +4,6 @@
 
 ## Getting Started
 
-* [Installation](getting-started/installation.md)
+* [Installation](introduction.md)
+* [Configuration](getting-started/configuration.md)
 
