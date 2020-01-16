@@ -1,8 +1,8 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Introduction](README.md)
 
 ## Getting Started
 
-* [Introduction](getting-started/introduction.md)
+* [Installation](getting-started/installation.md)
 
