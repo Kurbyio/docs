@@ -18,7 +18,7 @@ using Kurby.Internals.Auth;
 
 namespace Kurby.Controllers
 {
-    public class LoginController: Controller
+    public class LoginController : Controller
     {
         public LoginController(AuthManager authManager)
         {
