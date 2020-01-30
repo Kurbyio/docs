@@ -24,12 +24,12 @@ namespace Kurby.Controllers
 {
     public class DashboardController : Controller
     {
+        private AuthManager _authManager;
+         
         public DashboardController(AuthManager authManager)
         {
             _authManager = authManager;
-        }
-
-        private AuthManager _authManager;
+        }       
 
         public IActionResult Index()
         { 
@@ -52,12 +52,12 @@ namespace Kurby.Controllers
 {
     public class LoginController : Controller
     {
+        private AuthManager _authManager;
+        
         public LoginController(AuthManager authManager)
         {
             _authManager = authManager;
-        }
-
-        private AuthManager _authManager;
+        }        
 
         [AllowAnonymous]
         public IActionResult Login()
