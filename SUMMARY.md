@@ -2,4 +2,5 @@
 
 * [Initial page](README.md)
 * [Introduction](introduction.md)
+* [Authentication](authentication.md)
 
