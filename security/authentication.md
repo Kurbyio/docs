@@ -7,7 +7,7 @@ description: >-
 
 # Authentication
 
-## Getting Started
+## Introduction
 
 Kurby relies heavily on dependency injection to utilize built in Authentication methods.  To begin, you must inject the `AuthManager` into your class:
 
