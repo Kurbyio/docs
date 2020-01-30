@@ -9,7 +9,35 @@ description: >-
 
 ## Retrieving the Authenticated User
 
+You can access the authenticated user via the `AuthManager` class:
 
+```csharp
+var user = _authManager.GetUser();
+```
+
+Example using dependency injection inside a controller method.
+
+```csharp
+using Kurby.Internals.Auth;
+
+namespace Kurby.Controllers
+{
+    public class DashboardController : Controller
+    {
+        public DashboardController(AuthManager authManager)
+        {
+            _authManager = authManager;
+        }
+
+        private AuthManager _authManager;
+
+        public IActionResult Index()
+        { 
+            var user = _authManager.GetUser();
+        }
+    }
+}
+```
 
 ## Manually Authenticating Users
 
