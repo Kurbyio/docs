@@ -1,6 +1,12 @@
 # Table of contents
 
-* [Initial page](README.md)
-* [Introduction](introduction.md)
-* [Authentication](authentication.md)
+* [Introduction](README.md)
 
+## Getting Started
+
+* [Installation](getting-started/installation.md)
+* [Configuration](getting-started/configuration.md)
+
+## Security
+
+* [Authentication](security/authentication.md)
