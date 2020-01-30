@@ -46,6 +46,14 @@ You do not need to use Kurby's built in authentication controllers. However, you
 We can access the `AuthManager` by using dependency injection. We'll need to make sure to include this in the class. Let's take a look at a controller example:
 
 ```csharp
+if(_authManager.Attempt('email', 'password')) {
+    return RedirectToAction("Index", "Dashboard");
+}
+```
+
+Example using dependency injection inside a controller method.
+
+```csharp
 using Kurby.Internals.Auth;
 
 namespace Kurby.Controllers
