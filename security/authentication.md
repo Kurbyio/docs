@@ -7,15 +7,9 @@ description: >-
 
 # Authentication
 
-## Retrieving the Authenticated User
+## Getting Started
 
-You can access the authenticated user via the `AuthManager` class:
-
-```csharp
-var user = _authManager.GetUser();
-```
-
-Example using dependency injection inside a controller method.
+Kurby relies heavily on dependency injection to utilize built in Authentication methods.  To begin, you must inject the `AuthManager` into your class:
 
 ```csharp
 using Kurby.Internals.Auth;
@@ -29,13 +23,26 @@ namespace Kurby.Controllers
         public DashboardController(AuthManager authManager)
         {
             _authManager = authManager;
-        }       
-
-        public IActionResult Index()
-        { 
-            var user = _authManager.GetUser();
         }
     }
+}
+```
+
+## Retrieving the Authenticated User
+
+You can access the authenticated user via the `AuthManager` class:
+
+```csharp
+var user = _authManager.GetUser();
+```
+
+### Determining if the Current User is Authenticated
+
+To determine if the user is logged into your application, you can use the `Check` method in the `AuthManager` which will return true if the user is authenticated.
+
+```csharp
+if(_authManager.Check()) {
+    // user is logged in
 }
 ```
 
@@ -48,33 +55,6 @@ We can access the `AuthManager` by using dependency injection. We'll need to mak
 ```csharp
 if(_authManager.Attempt('email', 'password')) {
     return RedirectToAction("Index", "Dashboard");
-}
-```
-
-Example using dependency injection inside a controller method.
-
-```csharp
-using Kurby.Internals.Auth;
-
-namespace Kurby.Controllers
-{
-    public class LoginController : Controller
-    {
-        private AuthManager _authManager;
-        
-        public LoginController(AuthManager authManager)
-        {
-            _authManager = authManager;
-        }        
-
-        [AllowAnonymous]
-        public IActionResult Login()
-        { 
-            if(_authManager.Attempt('email', 'password')) {
-                return RedirectToAction("Index", "Dashboard");
-            }
-        }
-    }
 }
 ```
 
